@@ -4,30 +4,58 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>웹프로젝트</title>
+    <title>웹 프로젝트</title>
     <link rel="shortcut icon" type="x-icon" href="favicon.svg" />
     <link rel="stylesheet" href="index_css.css" />
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/ad5d718deb.js" crossorigin="anonymous"></script>
+
     <!-- defer?? -->
-    <script src="Active.js" defer></script>
-    <script src="header.html"></script>
-    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#top").load("header.html");
-        });
-    </script>
+    <script type="text/javascript" defer src="main.js"></script>
+
+
+
+
 </head>
 
 <body>
-    <!-- container -->
     <header id="top">
-    </header>
+        <nav class="navbar">
+            <!-- logo -->
+            <div class="navbar-logo">
+                <a href="#" target="_self">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a href="">HELLO</a>
 
+            </div>
+            <!-- menu -->
+            <ul class="navbar-menu">
+                <li><a href="#">HELLO</a></li>
+                <li><a href="about/index.html" target="_self">About</a></li>
+                <li><a href="">Project</a></li>
+                <li><a href="board/board.html">Board</a></li>
+            </ul>
+            <!-- icon -->
+            <ul class="navbar-icon" style="color:black">
+                <li>
+                    <a href="login.html" target="_self"> 로그인 </a>
+                </li>
+                <li>
+                    <a href="Register.html" target="_self"> 회원가입</a>
+                </li>
+            </ul>
+            <a href="#" class="navbar-more">
+                <!--#은 화면 최상단으로 이동-->
+                <i class="fas fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <!-- container -->
     <div class="main_container">
         <li>
-            <a href="CoronaNowWeb_Project_Diary.html" title="CoronaNow 웹프로젝트의 개발 다이어리" style=color:black>웹프로젝트 개발
+            <a href="CoronaNowWeb_Project_Diary.html" title="CoronaNow 웹프로젝트의 개발 다이어리" style=color:black>웹프로젝트
+                개발
                 다이어리</a>
         </li>
     </div>
