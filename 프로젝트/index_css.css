@@ -7,15 +7,17 @@
 
 *{ /*모든 태그에 margin과 padding을 0으로 하지 않으니까 네비바가 이상해짐 */
   margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+  padding: 0px;  
 }
 
 #top{
   font-family: "Black Han Sans", sans-serif;
 }
 
-a {
+a{
+  text-decoration: none;
+}
+.navbar-menu a {
   text-decoration: none;
   color: var(--text-color);
 }
@@ -28,9 +30,9 @@ a {
   background-color: var(--background-color);
 }
 
-.navbar-logo {
+.navbar-logo a {
   font-size: 24px;
-  /*color: var(--text-color); */
+  color: var(--text-color);
 }
 
 .fa-virus{
@@ -71,7 +73,9 @@ a {
   list-style: none;
   padding-left: 0;
 }
-
+.navbar-icon a{
+  color: var(--text-color);
+}
 .navbar-icon li {
   font-size: larger;
   padding: 8px 12px;
@@ -118,4 +122,47 @@ a {
 
 .main_container li{
   text-decoration: none;
+}
+
+/*********** section ***********/
+
+section {
+  z-index: 1;
+  background-image: url(bg.png);
+  height: 300px;
+  color: white;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+section div.inner {
+  z-index: 2;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 40px;
+}
+
+.actions {
+  width: 90px;
+  padding: 8px;
+  margin: 20px 0px;
+  border: 1px solid white;
+  font-size: 8px;
+  text-align: center;
+}
+
+.actions a {
+  color: white;
+}
+
+.actions li {
+  list-style: none;
+}
+
+span {
+  font-weight: lighter;
 }
