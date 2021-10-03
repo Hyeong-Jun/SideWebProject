@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 프로젝트</title>
+    <link rel="shortcut icon" type="x-icon" href="favicon.svg" />
+    <link rel="stylesheet" href="../index_css.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/ad5d718deb.js" crossorigin="anonymous"></script>
+
+    <!-- defer?? -->
+    <script type="text/javascript" defer src="../main.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <!-- Top Header-->
+    <header id="top">
+        <nav class="navbar">
+            <!-- logo -->
+            <div class="navbar-logo">
+                <a href="#" target="_self">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a href="">HELLO</a>
+
+            </div>
+            <!-- menu -->
+            <ul class="navbar-menu">
+                <li><a href="#">HELLO</a></li>
+                <li><a href="about/index.html" target="_self">About</a></li>
+                <li><a href="">Project</a></li>
+                <li><a href="board/board.html">Board</a></li>
+            </ul>
+            <!-- icon -->
+            <ul class="navbar-icon" style="color:black">
+                <li>
+                    <a href="login.html" target="_self"> 로그인 </a>
+                </li>
+                <li>
+                    <a href="../Register.html" target="_self"> 회원가입</a>
+                </li>
+            </ul>
+            <a href="#" class="navbar-more">
+                <!--#은 화면 최상단으로 이동-->
+                <i class="fas fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <div>
+        <center style="margin:30px">
+            <font size='3'><b> 게시판 </b></font>
+            </TD>
+
+            <TABLE border='0' width='600' cellpadding='0' cellspacing='0'>
+                <TR>
+                    <TD>
+                        <hr size='1' noshade>
+                    </TD>
+                </TR>
+            </TABLE>
+
+            <TABLE border='0' cellspacing=1 cellpadding=2 width='600'>
+
+                <TR bgcolor='cccccc'>
+                    <TD>
+                        <font size=2>
+                            <center><b>번호</b></center>
+                        </font>
+                    </TD>
+                    <TD>
+                        <font size=2>
+                            <center><b>글 제목</b></center>
+                        </font>
+                    </TD>
+                    <TD>
+                        <font size=2>
+                            <center><b>작성자</b></center>
+                        </font>
+                    </TD>
+                    <TD>
+                        <font size=2>
+                            <center><b>작성일</b></center>
+                        </font>
+                    </TD>
+                    <TD>
+                        <font size=2>
+                            <center><b>조회</b></center>
+                        </font>
+                    </TD>
+                </TR>
+
+                <TR bgcolor='ededed'>
+                    <TD align=center>
+                        <font size=2 color='black'>
+                            <!--<%=listnum %>-->
+                        </font>
+                    </TD>
+                    <TD align=left>
+                        <a href="write_output.jsp?num=<%=listnum %>">
+                            <font size=2 color="black">
+                                <!--<%=title %>-->
+                            </font>
+                        </a>
+                    </TD>
+                    <TD align=center>
+                        <a href="<%=email %>">
+                            <font size=2 color="black">
+                                <!--<%=name %>-->
+                            </font>
+                        </a>
+                    </TD>
+                    <TD align=center>
+                        <font size=2>
+                            <!--<%=writedate %>-->
+                        </font>
+                    </TD>
+                    <TD align=center>
+                        <font size=2>
+                            <!--<%=readcount %>-->
+                        </font>
+                </TR>
+
+
+            </TABLE>
+
+            <TABLE border='0' width='600' cellpadding='0' cellspacing='0'>
+                <TR>
+                    <TD>
+                        <hr size='1' noshade>
+                    </TD>
+                </TR>
+            </TABLE>
+
+
+            <a href="listboard.jsp?pageNum=<%=currentPage-1%>">[이전]</a>
+            <a href="listboard.jsp?pageNum=<%=i%>"></a>
+            <a href="listboard.jsp?pageNum=<%=currentPage+1%>">[다음]</a>
+
+            <TABLE border='0' width='600' cellpadding='0' cellspacing='0'>
+                <TR>
+                    <TD>
+                        <hr size='1' noshade>
+                    </TD>
+                </TR>
+            </TABLE>
+
+            <TABLE border=0 width=600>
+                <TR>
+                    <TD align='center'>
+                        <TABLE border='0' cellpadding='0' cellspacing='0'>
+                            <FORM Name='Form' Method='POST' Action='listboard.jsp' OnSubmit='return Check()'>
+                                <input type='hidden' name='search' value='1'>
+                                <TR>
+                                    <TD align='right'>
+                                        <select name='key' style="background-color:cccccc;">
+                                            <option value='title' selected>
+                                                <font size='2'>
+                                                    글제목</font>
+                                            </option>
+                                            <option value='contents'>
+                                                <font size='2'>
+                                                    글내용</font>
+                                            </option>
+                                            <option value='name'>
+                                                <font size='2'>
+                                                    작성자</font>
+                                            </option>
+                                        </select>
+                                    </TD>
+                                    <TD align='left'>
+                                        <input type='text' name='keyword' value='' size='20' maxlength='30'>
+                                        <input type='submit' value='검색'>
+                                    </td>
+                                </TR>
+                            </FORM>
+                        </TABLE>
+                    </TD>
+
+                    <TD align='right'>
+                        <a href='write.jsp'>[등록]</a>
+                    </TD>
+                </TR>
+            </TABLE>
+    </div>
+</body>
+
+</html>
