@@ -8,6 +8,7 @@
 *{ /*모든 태그에 margin과 padding을 0으로 하지 않으니까 네비바가 이상해짐 */
   margin: 0px;
   padding: 0px;  
+  box-sizing: border-box;
 }
 
 #top{

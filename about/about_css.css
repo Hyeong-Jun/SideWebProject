@@ -1,0 +1,78 @@
+.about_container {
+    padding: 0 20%;
+    margin: 0px;
+    width: 100%;
+    /* max-width: 1024px; */
+    /* 
+        position: relative;
+        left:30%;
+        text-align: left;
+                            */
+}
+.about_container p, h1 {
+    padding-bottom: 30px;
+}
+
+dl {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-bottom: 30px;
+}
+
+.about_container #summary {
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.about_container img { /*이미지 크기 자동조절 */
+    display: inline-block;
+    width: auto\9 !important;
+    max-width: 50%;
+    height: auto !important;
+    margin-bottom: 60px;
+    margin-left: 25%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/*
+#image1 {
+    width: 50%;
+}
+
+.image2Collage span {
+    width: 50%;
+    padding-bottom: 30px;
+}
+
+#image4 {
+    width: 50%;
+    padding-bottom: 30px;
+} 
+*/
+
+/* 이미지 콜라주 */
+/* 이미지 크기는 최대로 그냥 두고 span에 너비를 지정해서 사용.*/
+.imgCollage { margin: auto; text-align: center; }
+@media screen and (min-width: 768px) {	
+	.imgCollage { 
+		display: flex; -webkit-flex: auto; -moz-display:flex; -ms-display:flex; 
+		flex-wrap: wrap; -webkit-flex-wrap: wrap; -moz-flex-wrap:wrap; -ms-flex-wrap:wrap; 
+	}
+	.imgCollage > span { padding: 4px; } 
+	.imgCollage > span > .imageblock:not(:last-child) { vertical-align: baseline; } 
+    .imgCollage .imageblock { padding: 0; } 
+	.imgCollage img { box-shadow: none; }
+}
+@media screen and (max-width: 767px) { 
+	.imgCollage > span { padding: 0; width: 100% !important; }  
+	.imgCollage .imageblock { padding: 16px 0; } 
+	.imgCollage  > span:first-of-type .imageblock:first-of-type { padding-top: 8px; }
+	.imgCollage  > span:last-of-type .imageblock:last-of-type { padding-bottom: 4px; }
+}
+/* 이미지 콜라주  끝 */
+
