@@ -1,0 +1,318 @@
+/* 만들어놓고 필요한 곳에서 쓸 수 있다 */
+:root {
+  --text-color: #ffffff;
+  --background-color: #ffb5b5d8;
+  --accent-color: #ff0000;
+}
+
+*{ /*모든 태그에 margin과 padding을 0으로 하지 않으니까 네비바가 이상해짐 */
+  margin: 0px;
+  padding: 0px;  
+}
+
+#top{
+  font-family: "Black Han Sans", sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+.navbar-menu a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 22px 12px;
+  background-color: var(--background-color);
+}
+
+.navbar-logo a {
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.fa-virus{
+  color:rgb(255, 0, 0);
+}
+
+.fa-twitter{
+  color:rgba(29,161,242,1.00);
+}
+
+.fa-facebook-square{
+  color: #3578E5;
+}
+
+.naver_link{
+  color:#03c75a;
+  font-size: 19px;
+}
+/*********** menu ***********/
+
+.navbar-menu {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+.navbar-menu li {
+  padding: 8px 12px;
+}
+
+.navbar-menu li:hover {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.navbar-icon {
+  justify-content: flex-end;
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.navbar-icon a{
+  color: var(--text-color);
+}
+.navbar-icon li {
+  font-size: larger;
+  padding: 8px 12px;
+}
+.navbar-more {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+  
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  ￼ .navbar-menu a {
+    display: block;
+  }
+  .navbar-icon {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .navbar-more {
+    display: block;
+  }
+  
+  .navbar-menu.active,
+  .navbar-icon.active {
+    display: flex;
+  }
+}
+
+.main_container li{
+  text-decoration: none;
+}
+
+/*********** section ***********/
+
+section {
+  z-index: 1;
+  background-image: url(bg.png);
+  height: 500px;
+  color: white;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+section div.inner {
+  z-index: 2;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 40px;
+}
+
+.actions {
+  width: 90px;
+  padding: 8px;
+  margin: 20px 0px;
+  border: 1px solid white;
+  font-size: 8px;
+  text-align: center;
+}
+
+.actions a {
+  color: white;
+}
+
+.actions li {
+  list-style: none;
+}
+
+span {
+  font-weight: lighter;
+}
+
+@media screen and (max-width: 768px) {
+  
+  #banner {
+    width: 100%;
+  }
+  
+  #footer {
+    padding: 2em 0 0.1em 0;
+  }
+  
+}
+
+/*********** Footer ***********/
+
+#footer {
+  background-color: #e5474b;
+  color: #f2a3a5;
+  padding: 4em 0 2em 0;
+  background: #e5474b;
+}
+
+#footer input, #footer select, #footer textarea {
+  color: #ffffff;
+}
+
+#footer a {
+  color: #ffffff;
+}
+
+#footer h2 {
+  color: #fff;
+}
+
+
+#footer input[type="submit"]:hover,
+#footer input[type="reset"]:hover,
+#footer input[type="button"]:hover,
+#footer button:hover,
+#footer .button:hover {
+  background-color: #676767;
+}
+
+#footer input[type="submit"]:active,
+#footer input[type="reset"]:active,
+#footer input[type="button"]:active,
+#footer button:active,
+#footer .button:active {
+  background-color: #4d4d4d;
+}
+
+#footer input[type="submit"].alt,
+#footer input[type="reset"].alt,
+#footer input[type="button"].alt,
+#footer button.alt,
+#footer .button.alt {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #fff;
+  color: #ffffff !important;
+}
+
+#footer input[type="submit"].alt:hover,
+#footer input[type="reset"].alt:hover,
+#footer input[type="button"].alt:hover,
+#footer button.alt:hover,
+#footer .button.alt:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#footer input[type="submit"].alt:active,
+#footer input[type="reset"].alt:active,
+#footer input[type="button"].alt:active,
+#footer button.alt:active,
+#footer .button.alt:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#footer input[type="submit"].alt.icon:before,
+#footer input[type="reset"].alt.icon:before,
+#footer input[type="button"].alt.icon:before,
+#footer button.alt.icon:before,
+#footer .button.alt.icon:before {
+  color: #f8d1d2;
+}
+
+#footer input[type="text"],
+#footer input[type="password"],
+#footer input[type="email"],
+#footer select,
+#footer textarea {
+  background: none;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+#footer input[type="text"]:focus,
+#footer input[type="password"]:focus,
+#footer input[type="email"]:focus,
+#footer select:focus,
+#footer textarea:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 1px #ffffff;
+}
+
+#footer .select-wrapper:before {
+  color: #fff;
+}
+
+#footer input[type="checkbox"] + label,
+#footer input[type="radio"] + label {
+  color: #f2a3a5;
+}
+
+#footer input[type="checkbox"] + label:before,
+#footer input[type="radio"] + label:before {
+  background: none;
+  border-color: #fff;
+}
+
+#footer input[type="checkbox"]:checked + label:before,
+#footer input[type="radio"]:checked + label:before {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #e5474b;
+}
+
+
+#footer .inner {
+  max-width: 65em;
+  width: calc(100% - 6em);
+  margin: 0 auto;
+}
+
+
+#footer .copyright {
+  font-size: 0.9em;
+  margin: 0 0 2em 0;
+  padding: 0;
+}
+
+#footer .copyright a {
+  color: #f2a3a5;
+}
+
+@media screen and (max-width: 980px) {
+  
+  #footer {
+    padding: 4em 0 2em 0;
+  }
+  
+}
