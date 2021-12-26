@@ -1,0 +1,126 @@
+/* 만들어놓고 필요한 곳에서 쓸 수 있다 */
+:root {
+  --text-color: #ffffff;
+  --background-color: #ffb5b5d8;
+  --accent-color: #ff0000;
+}
+
+*{ /*모든 태그에 margin과 padding을 0으로 하지 않으니까 네비바가 이상해짐 */
+  margin: 0px;
+  padding: 0px;  
+  box-sizing: border-box;
+}
+
+#top{
+  font-family: "Black Han Sans", sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+.navbar-menu a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 22px 12px;
+  background-color: var(--background-color);
+}
+
+.navbar-logo a {
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.fa-virus{
+  color:rgb(255, 0, 0);
+}
+
+.fa-twitter{
+  color:rgba(29,161,242,1.00);
+}
+
+.fa-facebook-square{
+  color: #3578E5;
+}
+
+.naver_link{
+  color:#03c75a;
+  font-size: 19px;
+}
+/*********** menu ***********/
+
+.navbar-menu {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+.navbar-menu li {
+  padding: 8px 12px;
+}
+
+.navbar-menu li:hover {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.navbar-icon {
+  justify-content: flex-end;
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.navbar-icon a{
+  color: var(--text-color);
+}
+.navbar-icon li {
+  font-size: larger;
+  padding: 8px 12px;
+}
+.navbar-more {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+  
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  ￼ .navbar-menu a {
+    display: block;
+  }
+  .navbar-icon {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .navbar-more {
+    display: block;
+  }
+  
+  .navbar-menu.active,
+  .navbar-icon.active {
+    display: flex;
+  }
+}
+
+.main_container li{
+  text-decoration: none;
+}

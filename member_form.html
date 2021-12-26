@@ -8,12 +8,14 @@
 		rel="stylesheet">
 	<style type="text/css">
 		body {
+			width: 100%;
 			font-family: 'Nanum Pen Script', cursive;
 		}
 
 		li {
 			font-family: 'Do Hyeon', cursive;
 			font-size: 14pt;
+			list-style: none;
 		}
 
 		.comment {
@@ -23,11 +25,9 @@
 			font-family: 'Nanum Brush Script', cursive;
 		}
 
-		H1 {
-			font-style: bold;
-			font-size: 28pt;
-			color: #ff3333;
-			font-family: 'Cute Font', cursive;
+		form {
+			max-width: 100%;
+			min-width: 660px;
 		}
 	</style>
 	<script>
@@ -151,9 +151,10 @@
 </head>
 
 <body onload='document.login.id.focus()'>
+	<center>
 	<h1> 회원가입 </h1>
-	<form name="login" method="post" action="member_insert.html">
-		<table width=100%>
+	<form name="login" method="post" action="index.html">
+		<table>
 			<tr>
 				<td>
 					<ul>
@@ -163,7 +164,7 @@
 						<li>* 비밀번호 확인</li>
 						<li>* 학과</li>
 						<li>* 학년</li>
-						<li>* 모바일폰</li>
+						<li>* 휴대폰 번호</li>
 						<li>* 이메일</li>
 					</ul>
 				</td>
@@ -206,12 +207,12 @@
 				</td>
 			</tr>
 		</table>
-		<center>
-			<p><span class="comment"><strong>* 필수 입력 항목</strong></span><br>
-				<input type="button" value="확인" onclick="login_chk()"></input>&nbsp;
-				<input type="button" value="재입력" onclick="reset_form()"> </input>
-		</center>
+		<p><span class="comment"><strong>* 필수 입력 항목</strong></span><br>
+			<input type="button" value="확인" onclick="login_chk()"></input>&nbsp;
+			<input type="button" value="재입력" onclick="reset_form()"> </input>
+		</p>
 	</form>
+	</center>
 
 </body>
 

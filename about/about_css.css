@@ -2,12 +2,6 @@
     padding: 0 20%;
     margin: 0px;
     width: 100%;
-    /* max-width: 1024px; */
-    /* 
-        position: relative;
-        left:30%;
-        text-align: left;
-                            */
 }
 .about_container p, h1 {
     padding-bottom: 30px;
@@ -51,4 +45,3 @@ dl {
     margin: auto;
     width:40%;
 }
-

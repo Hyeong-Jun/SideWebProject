@@ -6,16 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>웹 프로젝트</title>
     <link rel="shortcut icon" type="x-icon" href="favicon.svg" />
-    <link rel="stylesheet" href="../index_css.css" />
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="board.css" />
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/ad5d718deb.js" crossorigin="anonymous"></script>
 
     <!-- defer?? -->
     <script type="text/javascript" defer src="../main.js"></script>
-
-
-
-
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+        
+    <script>
+        // 페이지
+        $(document).ready(function () {
+            // 이미지 로드 확인
+            $('#main').imagesLoaded(function () {
+                
+                // jQuery Masonry 플러그인 적용
+                // Masonry 라이브러리를 사용함으로서 게시글의 레이아웃을 형성한다
+                // Masonry 레이아웃은 Pinterest 어플의 게시글 스타일이다 
+                // 어떤 비율의 이미지를 불러오더라도 공간을 알맞게 찾아간다
+                $('#main').masonry({
+                    itemSelector: '.post',
+                    columnWidth: 230,
+                    isAnimated: true
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -34,16 +54,16 @@
             <ul class="navbar-menu">
                 <li><a href="../index.html">HELLO</a></li>
                 <li><a href="../about/about.html" target="_self">About</a></li>
-                <li><a href="">Project</a></li>
+                <li><a href="../프로젝트/tictactoe.html">Project</a></li>
                 <li><a href="../board/board.html">Board</a></li>
             </ul>
             <!-- icon -->
             <ul class="navbar-icon" style="color:black">
                 <li>
-                    <a href="login.html" target="_self"> 로그인 </a>
+                    <a href="../login.html" target="_self"> 로그인 </a>
                 </li>
                 <li>
-                    <a href="../Register.html" target="_self"> 회원가입</a>
+                    <a href="../member_form.html" target="_self"> 회원가입</a>
                 </li>
             </ul>
             <a href="#" class="navbar-more">
@@ -52,142 +72,259 @@
             </a>
         </nav>
     </header>
-    <div>
-        <center style="margin:30px">
-            <font size='3'><b> 게시판 </b></font>
-            </TD>
 
-            <TABLE border='0' width='600' cellpadding='0' cellspacing='0'>
-                <TR>
-                    <TD>
-                        <hr size='1' noshade>
-                    </TD>
-                </TR>
-            </TABLE>
+    <!--본문 게시글 영역-->
+    <!-- 게시글은 placeimg.com에서 랜덤으로 이미지를 불러온다-->
+    <section id="main">       
+        
+        <div class="post"> 
+            <div class="post-content"> 
+                세계보건기구(WHO)가 남아프리카공화국에서 발견된 새로운 코로나 변이인 ‘누 변이’에 대해 논의하기 위해 특별회의를 소집했다고 월스트리트저널(WSJ)·CNBC 방송 등 외신이 25일(현지 시각) 보도했다.
 
-            <TABLE border='0' cellspacing=1 cellpadding=2 width='600'>
+보도에 따르면 WHO는 26일 긴급회의를 열고 ‘누(Nu·B.1.1.529) 변이’를 ‘우려 변이’로 지정할지에 대해 논의할 예정이다.
 
-                <TR bgcolor='cccccc'>
-                    <TD>
-                        <font size=2>
-                            <center><b>번호</b></center>
-                        </font>
-                    </TD>
-                    <TD>
-                        <font size=2>
-                            <center><b>글 제목</b></center>
-                        </font>
-                    </TD>
-                    <TD>
-                        <font size=2>
-                            <center><b>작성자</b></center>
-                        </font>
-                    </TD>
-                    <TD>
-                        <font size=2>
-                            <center><b>작성일</b></center>
-                        </font>
-                    </TD>
-                    <TD>
-                        <font size=2>
-                            <center><b>조회</b></center>
-                        </font>
-                    </TD>
-                </TR>
+WHO는 코로나 변이 바이러스 중 전파력과 증상, 백신 효과 등을 고려해 주의해야 할 변의를 ‘우려(주요) 변이’와 ‘관심(기타) 변이’로 지정해 관리한다. WHO는 지난 5월 델타 변이를 우려 변이로 지정했다. 그 외 알파, 베타, 감마 변이도 우려 변이에 해당한다.
 
-                <TR bgcolor='ededed'>
-                    <TD align=center>
-                        <font size=2 color='black'>
-                            <!--<%=listnum %>-->
-                        </font>
-                    </TD>
-                    <TD align=left>
-                        <a href="write_output.jsp?num=<%=listnum %>">
-                            <font size=2 color="black">
-                                <!--<%=title %>-->
-                            </font>
-                        </a>
-                    </TD>
-                    <TD align=center>
-                        <a href="<%=email %>">
-                            <font size=2 color="black">
-                                <!--<%=name %>-->
-                            </font>
-                        </a>
-                    </TD>
-                    <TD align=center>
-                        <font size=2>
-                            <!--<%=writedate %>-->
-                        </font>
-                    </TD>
-                    <TD align=center>
-                        <font size=2>
-                            <!--<%=readcount %>-->
-                        </font>
-                </TR>
+CNBC에 따르면 WHO 기술책임자인 마리아 판 케르크호버 박사는 25일 진행된 화상 기자회견에서 “우리는 아직 이 변이에 대해 아는 것이 많지 않다. 다만 이 변이가 많은 돌연변이를 보유하고 있다는 점을 주시하고 있다”고 말했다.
 
+WHO의 촉각을 곤두세운 누 변이는 지난 11월 아프리카 보츠와나에서 처음 발생했다. 누 변이는 스파이크 단백질 내부에 32개 돌연변이를 보유하고 있어 16개의 돌연변이를 보유한 델타 변이보다 강력한 것으로 알려졌다. 바이러스는 스파이크 단백질을 이용해 숙주 세포로 침투하기 때문에 스파이크 단백질에 돌연변이가 생기면 감염력이 높아질 수 있다. 현재까지 누 변이 감염자는 약 10명 수준이다. 
+            </div>
+            <hr> 
+            <p class="post-description">델타보다 강력한 '누 변이' 출현ㄷㄷ</p>
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/people"></a> 
+                <p class="user-name">이형준</p> 
+            </div> 
+        </div> 
 
-            </TABLE>
-
-            <TABLE border='0' width='600' cellpadding='0' cellspacing='0'>
-                <TR>
-                    <TD>
-                        <hr size='1' noshade>
-                    </TD>
-                </TR>
-            </TABLE>
-
-
-            <a href="listboard.jsp?pageNum=<%=currentPage-1%>">[이전]</a>
-            <a href="listboard.jsp?pageNum=<%=i%>"></a>
-            <a href="listboard.jsp?pageNum=<%=currentPage+1%>">[다음]</a>
-
-            <TABLE border='0' width='600' cellpadding='0' cellspacing='0'>
-                <TR>
-                    <TD>
-                        <hr size='1' noshade>
-                    </TD>
-                </TR>
-            </TABLE>
-
-            <TABLE border=0 width=600>
-                <TR>
-                    <TD align='center'>
-                        <TABLE border='0' cellpadding='0' cellspacing='0'>
-                            <FORM Name='Form' Method='POST' Action='listboard.jsp' OnSubmit='return Check()'>
-                                <input type='hidden' name='search' value='1'>
-                                <TR>
-                                    <TD align='right'>
-                                        <select name='key' style="background-color:cccccc;">
-                                            <option value='title' selected>
-                                                <font size='2'>
-                                                    글제목</font>
-                                            </option>
-                                            <option value='contents'>
-                                                <font size='2'>
-                                                    글내용</font>
-                                            </option>
-                                            <option value='name'>
-                                                <font size='2'>
-                                                    작성자</font>
-                                            </option>
-                                        </select>
-                                    </TD>
-                                    <TD align='left'>
-                                        <input type='text' name='keyword' value='' size='20' maxlength='30'>
-                                        <input type='submit' value='검색'>
-                                    </td>
-                                </TR>
-                            </FORM>
-                        </TABLE>
-                    </TD>
-
-                    <TD align='right'>
-                        <a href='write.jsp'>[등록]</a>
-                    </TD>
-                </TR>
-            </TABLE>
-    </div>
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="../Image/모더나접종완료.jpg"></a> 
+            </div>
+            <hr>
+            <p class="post-description">모더나 접종완료 했어요</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/people"></a> 
+                <p class="user-name">이형준</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="../Image/모더나1차접종.jpg"></a> 
+            </div>
+            <hr>
+            <p class="post-description">모더나 1차접종하고 왔어요</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/people"></a> 
+                <p class="user-name">이형준</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/215/tech"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/tech"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/256/animals"></a> 
+            </div>
+            <hr>
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/animals"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/182/animals"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/animals"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/176/animals"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/animals"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/316/tech"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/tech"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/186/arch"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/arch"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/249/any"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/any"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/256/animals"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/animals"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/305/any"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/any"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/180/any"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/any"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/273/any"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/any"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/256/animals"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/animals"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/230/any"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/any"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/192/any"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/any"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/215/tech"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/tech"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/186/arch"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/arch"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+         
+        <div class="post"> 
+            <div class="post-content"> 
+                <a><img width="190" src="https://placeimg.com/190/213/tech"></a> 
+            </div>
+            <hr> 
+            <p class="post-description">글제목</p> 
+            <div class="user-profile"> 
+                <a class="user-image" href="#"><img src="https://placeimg.com/30/30/tech"></a> 
+                <p class="user-name">익명</p> 
+            </div> 
+        </div> 
+    </section>
 </body>
 
 </html>

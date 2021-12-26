@@ -9,6 +9,7 @@
   margin: 0px;
   padding: 0px;  
   box-sizing: border-box;
+  list-style: none;
 }
 
 #top{
@@ -224,7 +225,7 @@ span {
 #footer button.alt,
 #footer .button.alt {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px #fff;
+  box-shadow: ruleet 0 0 0 2px #fff;
   color: #ffffff !important;
 }
 
@@ -335,7 +336,7 @@ span {
 
 #footer .copyright {
 	font-size: 0.9em;
-	margin: 0 0 2em 0;
+	margin: 2em 0 2em 0;
 	padding: 0;
 }
 
